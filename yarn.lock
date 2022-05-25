@@ -2359,6 +2359,13 @@ browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.20.2, browserslist@^4
     node-releases "^2.0.3"
     picocolors "^1.0.0"
 
+buefy@^0.9.21:
+  version "0.9.21"
+  resolved "https://registry.yarnpkg.com/buefy/-/buefy-0.9.21.tgz#1b01f4dafefe958ca7934447dfe821dfef18d2fe"
+  integrity sha512-geOJgzi5jFDyRJ9Zl0379yyRBatZ6Qg83kRnCJTb7/nCuXcfXd/eis3tFaDTGuntnfv2MezHzc092OIHwgRwAg==
+  dependencies:
+    bulma "0.9.3"
+
 buffer-from@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.2.tgz#2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5"
@@ -2397,6 +2404,11 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha512-HpGFw18DgFWlncDfjTa2rcQ4W88O1mC8e8yZ2AvQY5KDaktSTwo+KRf6nHK6FRI5FyRyb/5T6+TSxfP7QyGsmQ==
+
+bulma@0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.9.3.tgz#ddccb7436ebe3e21bf47afe01d3c43a296b70243"
+  integrity sha512-0d7GNW1PY4ud8TWxdNcP6Cc8Bu7MxcntD/RRLGWuiw/s0a9P+XlH/6QoOIrmbj6o8WWJzJYhytiu9nFjTszk1g==
 
 bytes@3.0.0:
   version "3.0.0"
@@ -7095,6 +7107,13 @@ public-encrypt@^4.0.0:
     randombytes "^2.0.1"
     safe-buffer "^5.1.2"
 
+pug-plain-loader@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/pug-plain-loader/-/pug-plain-loader-1.1.0.tgz#59f3b475284871afcd6a18d2ad3318b150fdc533"
+  integrity sha512-1nYgIJLaahRuHJHhzSPODV44aZfb00bO7kiJiMkke6Hj4SVZftuvx6shZ4BOokk50dJc2RSFqNUBOlus0dniFQ==
+  dependencies:
+    loader-utils "^1.1.0"
+
 pump@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/pump/-/pump-2.0.1.tgz#12399add6e4cf7526d973cbc8b5ce2e2908b3909"
@@ -8761,6 +8780,11 @@ vue-property-decorator@^9.1.2:
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-9.1.2.tgz#266a2eac61ba6527e2e68a6933cfb98fddab5457"
   integrity sha512-xYA8MkZynPBGd/w5QFJ2d/NM0z/YeegMqYTphy7NJQXbZcuU6FC6AOdUAcy4SXP+YnkerC6AfH+ldg7PDk9ESQ==
+
+vue-pug@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-pug/-/vue-pug-1.0.2.tgz#6f4d0d5ebacdea23f5932c63764fa0494d63a20c"
+  integrity sha512-fV58pm/a/bBOR8QPNulb0sU3EYt0q9ZH2uAHwE/XsODcY7PukU/Iu1GSB60CfsfTYcPtbXxelraZEdoKgAoIcg==
 
 vue-router@^3.2.0:
   version "3.5.4"
