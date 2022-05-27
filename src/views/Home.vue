@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="Vue logo" src="../assets/logo.svg" />
     <!-- <Sidebar/> -->
     <b-field label="Welcome to your Vue">
       <b-button expanded v-model="tmp" type="is-danger">
