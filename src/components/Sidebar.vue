@@ -14,35 +14,35 @@
 
     <div class="bar__menu is_one_third">
       <b-field>
-        <b-button :expanded="isExpanded" type="is-primary" icon-left="wrench" @click="home">
+        <b-button :expanded="isExpanded" type="is-primary" icon-left="wrench" @click="push(`config`)">
           <div v-if="isExpanded" class="nav_button">
             Main config
           </div>
         </b-button>
       </b-field>
       <b-field>
-        <b-button :expanded="isExpanded" type="is-primary" icon-left="atom-variant" @click="home">
+        <b-button :expanded="isExpanded" type="is-primary" icon-left="atom-variant" @click="push(`particles`)">
           <div v-if="isExpanded" class="nav_button">
             Particles
           </div>
         </b-button>
       </b-field>
       <b-field>
-        <b-button :expanded="isExpanded" type="is-primary" icon-left="resistor-nodes" @click="home">
+        <b-button :expanded="isExpanded" type="is-primary" icon-left="resistor-nodes" @click="push(`editor`)">
           <div v-if="isExpanded" class="nav_button">
             Node editor
           </div>
         </b-button>
       </b-field>
       <b-field>
-        <b-button :expanded="isExpanded" type="is-primary" icon-left="list-status" @click="home">
+        <b-button :expanded="isExpanded" type="is-primary" icon-left="list-status" @click="push(`examples`)">
           <div v-if="isExpanded" class="nav_button">
             Examples
           </div>
         </b-button>
       </b-field>
       <b-field>
-        <b-button :expanded="isExpanded" type="is-primary"  icon-left="information" @click="home">
+        <b-button :expanded="isExpanded" type="is-primary"  icon-left="information" @click="push(`about`)">
           <div v-if="isExpanded" class="nav_button">
             About
           </div>
@@ -70,8 +70,8 @@ export default class Sidebar extends Vue {
     this.$router.push(`/`);
   }
 
-  about() {
-    this.$router.push(`/about`);
+  push(path: string) {
+    this.$router.push(`/${path}`);
   }
 }
 </script>
