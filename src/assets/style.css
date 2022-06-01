@@ -1,0 +1,15 @@
+.columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column:last-child {
+    margin-right: 0;
+    padding-right: 0;
+}
