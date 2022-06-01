@@ -79,6 +79,7 @@ export default class Sidebar extends Vue {
 <style scoped>
 .bar {
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   padding: 1rem;
   background-color: #1e1e1e;
@@ -96,7 +97,7 @@ export default class Sidebar extends Vue {
 }
 
 .expanded {
-  width: 20rem;
+  width: 16.5rem;
 }
 
 .bar__header {
