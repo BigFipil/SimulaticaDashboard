@@ -50,7 +50,11 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "@typescript-eslint/no-inferrable-types": [
+        "off"
+      ]
+    }
   },
   "browserslist": [
     "> 1%",
