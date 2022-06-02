@@ -10,6 +10,7 @@
   "dependencies": {
     "buefy": "^0.9.21",
     "core-js": "^3.6.5",
+    "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
