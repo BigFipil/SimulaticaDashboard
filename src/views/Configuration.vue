@@ -66,7 +66,7 @@ export default class Configuration extends Vue {
     X: 10,
     Y: 10,
     Z: 10,
-  }
+  };
 
   simulationType = `3D`;
 
