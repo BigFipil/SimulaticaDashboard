@@ -9,7 +9,6 @@
     flex-direction: column;
 }
 
-.column:last-child {
-    margin-right: 0;
-    padding-right: 0;
+.column__center {
+    justify-content: center;
 }
