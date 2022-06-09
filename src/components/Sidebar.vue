@@ -84,6 +84,7 @@ export default class Sidebar extends Vue {
   padding: 1rem;
   background-color: #1e1e1e;
   height: 100vh;
+  text-align: center;
 }
 
 .nav_button {
