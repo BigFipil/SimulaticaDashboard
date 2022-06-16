@@ -33,3 +33,22 @@ export function emptySettings(): Settings {
     Threads: 4,
   };
 }
+
+export type Particle = {
+  name: string;
+  quantity: number;
+  properties: any;
+  methods: any;
+  outputInformations: OutInfo;
+};
+
+export type OutInfo = {
+  color: string;
+  x: string;
+  y: string;
+  z: string;
+  size: number;
+  type: Icon;
+};
+
+export type Icon = `cross` | `dot` | `ring`;
