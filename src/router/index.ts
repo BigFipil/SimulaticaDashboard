@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Configuration from "../views/Configuration.vue";
+import Particles from "../views/Particles.vue";
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,11 @@ const routes: Array<RouteConfig> = [
     path: "/config",
     name: "Configuration",
     component: Configuration,
+  },
+  {
+    path: "/particles",
+    name: "Particles",
+    component: Particles,
   },
 ];
 
