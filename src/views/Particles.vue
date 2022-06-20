@@ -48,8 +48,10 @@
 
             b-field(label='Color:')
               b-input(v-model='particle.outputInformations.color' @input="update")
+
             b-field(label='Type:')
               b-input(v-model='particle.outputInformations.type' @input="update")
+
             b-field(label='Size:')
               b-input(v-model='particle.outputInformations.size' @input="update")
 
