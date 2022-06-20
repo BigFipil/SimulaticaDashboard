@@ -2,6 +2,8 @@
   <div class="app">
     <Sidebar />
     <div class="app__content">
+      <Topbar />
+
       <router-view />
     </div>
   </div>
@@ -10,10 +12,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Sidebar from "@/components/Sidebar.vue";
+import Topbar from "@/components/Topbar.vue";
 
 @Component({
   components: {
     Sidebar,
+    Topbar,
   },
 })
 export default class App extends Vue {
@@ -30,6 +34,7 @@ export default class App extends Vue {
 }
 .app__content {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
 }
