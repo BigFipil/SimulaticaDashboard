@@ -3,7 +3,7 @@
     .columns
       .column
         Form(label="Particle List:")
-          div
+          .particles
             .particle(
               v-for="(particle, index) in localParticles"
               :key="particle.name"
@@ -115,6 +115,11 @@ export default class Particles extends Vue {
   align-items: center;
   width: 70%;
   margin: 2rem 15%;
+}
+
+.particles {
+  height: 30rem;
+  overflow: auto;
 }
 
 .particle {
