@@ -1,59 +1,82 @@
 <template lang="pug">
-  .container
-    .columns
-      .column
-        Form(label="Particle List:")
-          .particles
-            .particle(
-              v-for="(particle, index) in localParticles"
-              :key="particle.name"
-              :class="selected == index ? `selected` : ``"
-              v-text="particle.name"
-              @click="() => selected = index"
-            )
+  .view
+    .container
+      .columns
+        .column
+          Form(label="Particle:")
+            div(v-if="particle")
+              b-field(label='Name:')
+                b-input(v-model='particle.name' @input="update")
 
-            .add__button
-              b-field
-                b-button(
-                  type="is-primary"
-                  size="is-small"
-                  style="background-color: transparent; color: black"
-                  @click="addParticle"
-                )
-                  b-icon(
-                    icon="plus"
-                    size="is-small"
-                  )
+              b-field(label='Quantity:')
+                b-input(v-model.number='particle.quantity' type='number' @input="update")
 
-              .label Dodaj nowy element
+              .columns.no__margin
+                b-field.column.no__margin(label='X' expanded='')
+                  b-input(v-model='particle.outputInformations.x' @input="update")
 
-      .column
-        Form(label="Particle:")
-          div(v-if="particle")
-            b-field(label='Name:')
-              b-input(v-model='particle.name' @input="update")
+                b-field.column.no__margin(label='Y')
+                  b-input(v-model='particle.outputInformations.y' @input="update")
 
-            b-field(label='Quantity:')
-              b-input(v-model.number='particle.quantity' type='number' @input="update")
+                b-field.column.no__margin(label='Z')
+                  b-input(v-model='particle.outputInformations.z' @input="update")
 
-            .columns.no__margin
-              b-field.column.no__margin(label='X' expanded='')
-                b-input(v-model='particle.outputInformations.x' @input="update")
+              b-field(label='Color:')
+                b-input(v-model='particle.outputInformations.color' @input="update")
 
-              b-field.column.no__margin(label='Y')
-                b-input(v-model='particle.outputInformations.y' @input="update")
+              b-field(label='Type:')
+                b-input(v-model='particle.outputInformations.type' @input="update")
 
-              b-field.column.no__margin(label='Z')
-                b-input(v-model='particle.outputInformations.z' @input="update")
+              b-field(label='Size:')
+                b-input(v-model='particle.outputInformations.size' @input="update")
 
-            b-field(label='Color:')
-              b-input(v-model='particle.outputInformations.color' @input="update")
+        .column
+          Form(label="Properties:")
+            div(v-if="particle")
+              .particle-prop
+              b-field(label='Name:')
+                b-input(v-model='particle.name' @input="update")
 
-            b-field(label='Type:')
-              b-input(v-model='particle.outputInformations.type' @input="update")
+              b-field(label='Quantity:')
+                b-input(v-model.number='particle.quantity' type='number' @input="update")
 
-            b-field(label='Size:')
-              b-input(v-model='particle.outputInformations.size' @input="update")
+              .columns.no__margin
+                b-field.column.no__margin(label='X' expanded='')
+                  b-input(v-model='particle.outputInformations.x' @input="update")
+
+                b-field.column.no__margin(label='Y')
+                  b-input(v-model='particle.outputInformations.y' @input="update")
+
+                b-field.column.no__margin(label='Z')
+                  b-input(v-model='particle.outputInformations.z' @input="update")
+
+              b-field(label='Color:')
+                b-input(v-model='particle.outputInformations.color' @input="update")
+
+              b-field(label='Type:')
+                b-input(v-model='particle.outputInformations.type' @input="update")
+
+              b-field(label='Size:')
+                b-input(v-model='particle.outputInformations.size' @input="update")
+
+    .particle-bar
+      .particle-bar__add
+        b-button(
+          type="is-primary"
+          icon-left="plus"
+          expanded
+          @click="addParticle"
+        )
+          | Add particle
+
+      .particle-bar__list
+        .particle(
+          v-for="(particle, index) in localParticles"
+          :key="particle.name"
+          :class="selected == index ? `selected` : ``"
+          v-text="particle.name"
+          @click="() => selected = index"
+        )
 
 </template>
 
@@ -111,12 +134,33 @@ export default class Particles extends Vue {
 </script>
 
 <style scoped>
+.view {
+  display: flex;
+  height: calc(100% - 4.5rem);
+}
+
+.particle-bar {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-width: 15rem;
+  box-shadow: -10px 0 5px -5px rgba(0, 0, 0, 0.05);
+}
+
+.particle-bar__add {
+  grid-row-start: 2;
+  padding: 1rem;
+}
+
+.particle-bar__list {
+  overflow: auto;
+}
+
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 70%;
-  margin: 2rem 15%;
+  justify-content: center;
+  margin: 2rem 10%;
 }
 
 .particles {
@@ -127,8 +171,8 @@ export default class Particles extends Vue {
 .particle {
   padding: 1.25rem 1rem 1rem 1.5rem;
   background-color: #fdfdfd;
-  margin-bottom: 1rem;
-  border-radius: 0.75rem;
+  margin: 1rem;
+  border-radius: 0.25rem;
 }
 
 .selected {
@@ -139,28 +183,11 @@ export default class Particles extends Vue {
   display: flex;
   gap: 0.5rem;
 }
-/* .todoitem
-    display: flex
-    width: 100%
-    gap: .5rem
-    margin-block: .5rem
-.todoitem__label
-    flex-shrink: 1
-    flex-grow: 1
-    width: 100%
-.todoitem__button
-    flex-shrink: 0
-    flex-grow: 0
-    width: 1rem
-    padding-top: .25rem
-    background-color: transparent
-    display: none */
 .label {
   font-size: 1rem;
   padding-top: 0.15rem;
   opacity: 0.5;
 }
-
 
 .no__margin {
   margin-bottom: 0 !important;
