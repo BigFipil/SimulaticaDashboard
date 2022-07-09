@@ -32,32 +32,10 @@
 
         .column
           Form(label="Properties:")
-            div(v-if="particle")
-              .particle-prop
-              b-field(label='Name:')
-                b-input(v-model='particle.name' @input="update")
-
-              b-field(label='Quantity:')
-                b-input(v-model.number='particle.quantity' type='number' @input="update")
-
-              .columns.no__margin
-                b-field.column.no__margin(label='X' expanded='')
-                  b-input(v-model='particle.outputInformations.x' @input="update")
-
-                b-field.column.no__margin(label='Y')
-                  b-input(v-model='particle.outputInformations.y' @input="update")
-
-                b-field.column.no__margin(label='Z')
-                  b-input(v-model='particle.outputInformations.z' @input="update")
-
-              b-field(label='Color:')
-                b-input(v-model='particle.outputInformations.color' @input="update")
-
-              b-field(label='Type:')
-                b-input(v-model='particle.outputInformations.type' @input="update")
-
-              b-field(label='Size:')
-                b-input(v-model='particle.outputInformations.size' @input="update")
+            PropertyList(
+              v-if="particle"
+              v-model="particle.properties"
+            )
 
     .particle-bar
       .particle-bar__add
@@ -83,11 +61,13 @@
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator";
 import Form from "@/components/Form.vue";
+import PropertyList from "@/components/PropertyList.vue";
 import { Particle } from "@/types";
 
 @Component({
   components: {
     Form,
+    PropertyList,
   },
 })
 export default class Particles extends Vue {
