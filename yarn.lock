@@ -958,6 +958,42 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@baklavajs/core@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@baklavajs/core/-/core-1.10.1.tgz#38cb6256c73fab997ce77ddac478796bb06eb204"
+  integrity sha512-6jzfhMxDkffNHlgFg7d479MTE6NHSCTkN30gFvbuGtT/o+lYGuhTHrvb0c66tR7b+5YxnVNp951gyNx4J0bthQ==
+  dependencies:
+    "@baklavajs/events" "^1.10.0"
+
+"@baklavajs/events@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@baklavajs/events/-/events-1.10.0.tgz#25f6e01aada501c83f45efa520e0a18d08b48e7b"
+  integrity sha512-0An8vThUMnOOdsjg2Z0sxZWIgCBX1lP+Kl18u04AamEGb6JgjaqE+KbVQojplkOvOmRFbd5DLCUE0taV3eldRw==
+
+"@baklavajs/plugin-engine@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@baklavajs/plugin-engine/-/plugin-engine-1.10.1.tgz#3186e1d88c2ee6080cc5553a7916f30b364f5002"
+  integrity sha512-0bRwqbEuDQVzvc8lDPhvM8Du5jJyb+MBreMuwpp/TwVnmghqBiMuOJVhGpr4TJzqgAhs+ziPzp9VF1R6IWZKHg==
+  dependencies:
+    "@baklavajs/events" "^1.10.0"
+
+"@baklavajs/plugin-interface-types@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@baklavajs/plugin-interface-types/-/plugin-interface-types-1.10.1.tgz#6fa3f7aa298217ed0fb4e206e20197e89db6c613"
+  integrity sha512-Y3iS2cNrYz+HyVNvpLtB+rBi/2FsNFXoTK+gHeXASkLMsAncuz/Slyyl/N2oFiGnE0bZ1n1S7GvMhCG7NqFSmg==
+
+"@baklavajs/plugin-options-vue@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@baklavajs/plugin-options-vue/-/plugin-options-vue-1.10.1.tgz#5b60fd9f573cf6cedcfa79db93c9c34236fd99c0"
+  integrity sha512-1JBE0hZqzHm2ShYRIpxo09p7dFZ7nAcbc9Aw9lDLP2Kl3mE/x9ctumrbEpGyCsAsVTRfM45Poo02f/MwZxLPLg==
+
+"@baklavajs/plugin-renderer-vue@^1.10.1":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@baklavajs/plugin-renderer-vue/-/plugin-renderer-vue-1.10.1.tgz#c1979a21a1c1af7cfa4f149146351d1a67ccadf9"
+  integrity sha512-7e15nrz6IiSDMKm8PV7ozcNO67VPEE8KVkJGbhLJEFxd+ao2aYAgwHcvZsEg63AmLwU6Rk1yNNpbAN8nFkyoZw==
+  dependencies:
+    "@baklavajs/events" "^1.10.0"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -2163,6 +2199,17 @@ babel-walk@3.0.0-canary-5:
   integrity sha512-GAwkz0AihzY5bkwIY5QDR+LvsRQgB/B+1foMPvi0FZPMl5fjD7ICiznUiBdLYMH1QYe6vqu4gWYytZOccLouFw==
   dependencies:
     "@babel/types" "^7.9.6"
+
+baklavajs@^1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/baklavajs/-/baklavajs-1.10.1.tgz#8541b37f989044559987e104c239589d78616f18"
+  integrity sha512-c6U2+5Jdv8/hXI1deTKXnxpNSOBCZ08P9CLXXnNKdLsqOuQDX0hCCPinnNQe5Kbby+DMFDofqSc9tEVOOwW6tg==
+  dependencies:
+    "@baklavajs/core" "^1.10.1"
+    "@baklavajs/plugin-engine" "^1.10.1"
+    "@baklavajs/plugin-interface-types" "^1.10.1"
+    "@baklavajs/plugin-options-vue" "^1.10.1"
+    "@baklavajs/plugin-renderer-vue" "^1.10.1"
 
 balanced-match@^1.0.0:
   version "1.0.2"
