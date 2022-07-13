@@ -37,24 +37,12 @@
               v-model="particle.properties"
             )
 
-    .particle-bar
-      .particle-bar__add
-        b-button(
-          type="is-primary"
-          icon-left="plus"
-          expanded
-          @click="addParticle"
-        )
-          | Add particle
-
-      .particle-bar__list
-        .particle(
-          v-for="(particle, index) in localParticles"
-          :key="particle.name"
-          :class="selected == index ? `selected` : ``"
-          v-text="particle.name"
-          @click="() => selected = index"
-        )
+    particle-bar(
+      :particles="localParticles"
+      :selected="selected"
+      @addParticle="addParticle"
+      @selectParticle="(index) => selected = index"
+    )
 
 </template>
 
@@ -62,12 +50,14 @@
 import { Component, Vue, Watch } from "vue-property-decorator";
 import Form from "@/components/Form.vue";
 import PropertyList from "@/components/PropertyList.vue";
+import ParticleBar from "@/components/ParticleBar.vue";
 import { Particle } from "@/types";
 
 @Component({
   components: {
     Form,
     PropertyList,
+    ParticleBar,
   },
 })
 export default class Particles extends Vue {
@@ -119,22 +109,6 @@ export default class Particles extends Vue {
   height: calc(100% - 4.5rem);
 }
 
-.particle-bar {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  min-width: 15rem;
-  box-shadow: -10px 0 5px -5px rgba(0, 0, 0, 0.05);
-}
-
-.particle-bar__add {
-  grid-row-start: 2;
-  padding: 1rem;
-}
-
-.particle-bar__list {
-  overflow: auto;
-}
-
 .container {
   display: flex;
   flex-direction: row;
@@ -143,26 +117,6 @@ export default class Particles extends Vue {
   margin: 2rem 10%;
 }
 
-.particles {
-  height: 30rem;
-  overflow: auto;
-}
-
-.particle {
-  padding: 1.25rem 1rem 1rem 1.5rem;
-  background-color: #fdfdfd;
-  margin: 1rem;
-  border-radius: 0.25rem;
-}
-
-.selected {
-  background-color: #d3d3d3;
-}
-
-.add__button {
-  display: flex;
-  gap: 0.5rem;
-}
 .label {
   font-size: 1rem;
   padding-top: 0.15rem;
