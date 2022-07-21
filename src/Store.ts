@@ -17,5 +17,9 @@ export const store = new Vuex.Store({
     updateParticles(state, newParticles: Particle[]) {
       state.particles = newParticles;
     },
+
+    updateParticle(state, newParticle: { particle: Particle; index: number }) {
+      state.particles[newParticle.index] = newParticle.particle;
+    },
   },
 });
