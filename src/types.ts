@@ -40,6 +40,7 @@ export type Particle = {
   properties: any;
   methods: any;
   outputInformations: OutInfo;
+  rawMethods: string;
 };
 
 export type OutInfo = {
