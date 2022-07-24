@@ -13,7 +13,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class Form extends Vue {
   @Prop() private label!: string;
-
 }
 </script>
 
@@ -25,6 +24,7 @@ export default class Form extends Vue {
 }
 .label {
   font-size: 2rem;
+  color: #f1f1f1;
 }
 .content {
   padding-left: 1rem;

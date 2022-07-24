@@ -28,16 +28,24 @@ import { Particle } from "@/types";
 @Component
 export default class ParticleBar extends Vue {
   @Prop() readonly particles!: Particle[];
-  @Prop() readonly selected!: number;
+  @Prop({ type: Boolean, default: false }) readonly addingMode!: boolean;
+
+  select(index: number) {
+    this.selected = index;
+    this.$emit(`selectParticle`, index);
+  }
+
+  selected: number | null = null;
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .particle-bar {
   display: grid;
   grid-template-rows: 1fr auto;
   min-width: 15rem;
   box-shadow: -10px 0 5px -5px rgba(0, 0, 0, 0.05);
+  background-color: #353535;
 }
 
 .particle-bar__add {
@@ -56,12 +64,13 @@ export default class ParticleBar extends Vue {
 
 .particle {
   padding: 1.25rem 1rem 1rem 1.5rem;
-  background-color: #fdfdfd;
+  background-color: #2b2a2a;
+  color: rgb(226, 226, 226);
   margin: 1rem;
   border-radius: 0.25rem;
 }
 
 .selected {
-  background-color: #d3d3d3;
+  background-color: #000;
 }
 </style>

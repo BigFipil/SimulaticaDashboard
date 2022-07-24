@@ -2,8 +2,8 @@ import Vue from "vue";
 import Buefy from 'buefy'
 import App from "./App.vue";
 import router from "./router";
-import 'buefy/dist/buefy.css';
 import '@/assets/style.css';
+import '@/assets/style.scss';
 import Vuex from 'vuex'
 import { store } from '@/Store'
 import { BaklavaVuePlugin } from '@baklavajs/plugin-renderer-vue'
