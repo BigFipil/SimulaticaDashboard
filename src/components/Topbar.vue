@@ -11,6 +11,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { saveAs } from "file-saver";
+import { Particle } from "@/types";
 
 @Component
 export default class Topbar extends Vue {
@@ -41,7 +42,7 @@ export default class Topbar extends Vue {
   display: flex;
   flex-direction: row-reverse;
   padding: 1rem;
-  background-color: #f0f0f0;
+  background-color: #2b2a2a;
   text-align: center;
 }
 </style>

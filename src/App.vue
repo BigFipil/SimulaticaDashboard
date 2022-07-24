@@ -30,8 +30,14 @@ export default class App extends Vue {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  background-color: #464646;
   display: flex;
 }
+
+.label {
+  color: #f1f1f1;
+}
+
 .app__content {
   display: flex;
   flex-direction: column;
