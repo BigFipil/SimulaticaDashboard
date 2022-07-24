@@ -39,7 +39,7 @@
 
     particle-bar(
       :particles="localParticles"
-      :selected="selected"
+      addingMode
       @addParticle="addParticle"
       @selectParticle="(index) => selected = index"
     )
@@ -71,7 +71,7 @@ export default class Particles extends Vue {
 
   addParticle() {
     this.localParticles.push({
-      name: `new particle #${this.localParticles.length + 1}`,
+      name: `newParticle_${this.localParticles.length + 1}`,
       quantity: 0,
       properties: {},
       methods: {},
@@ -83,6 +83,9 @@ export default class Particles extends Vue {
         size: 5,
         type: `dot`,
       },
+      rawMethods: `[SimulaticaMethod]\npublic void Initialize() {\n\n} \n\n[SimulaticaMethod]\npublic void Calculate(newParticle_${
+        this.localParticles.length + 1
+      } p) {\n\n}\n`,
     });
 
     this.update();

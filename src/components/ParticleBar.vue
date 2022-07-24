@@ -5,6 +5,7 @@
           type="is-primary"
           icon-left="plus"
           expanded
+          :disabled="!addingMode"
           @click="() => $emit(`addParticle`)"
         )
           | Add particle
@@ -15,7 +16,7 @@
           :key="particle.name"
           :class="selected == index ? `selected` : ``"
           v-text="particle.name"
-          @click="() => $emit(`selectParticle`, index)"
+          @click="() => select(index)"
         )
 
 </template>
