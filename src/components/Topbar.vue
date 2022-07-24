@@ -22,7 +22,7 @@ export default class Topbar extends Vue {
 
   get simulationConfig() {
     return {
-      particleBlueprints: this.particles,
+      particleBlueprints: this.mapParticles(),
       ...this.settings,
     };
   }
@@ -31,8 +31,39 @@ export default class Topbar extends Vue {
     return this.$store.state.settings;
   }
 
-  get particles() {
+  get particles(): Particle[] {
     return this.$store.state.particles;
+  }
+
+  mapParticles() {
+    return this.particles.map((particle) => {
+      const mapped = Object.fromEntries(
+        particle.rawMethods
+          .split(`[SimulaticaMethod]`)
+          .filter((_element, index) => index != 0)
+          .map((methodString) => {
+            const header = methodString
+              .substring(0, methodString.indexOf(`{`))
+              .replace(`public void `, ``)
+              .replace(`private void `, ``)
+              .trim();
+
+            const body = methodString
+              .replaceAll(`\n`, ``)
+              .replaceAll(`\t`, ``)
+              .trim()
+              .substring(
+                methodString.indexOf(`{`),
+                methodString.lastIndexOf(`}`) - 1
+              )
+              .replace(/\}([^}]*)$/, `$1`);
+
+            return [header, body];
+          })
+      );
+
+      return { ...particle, methods: mapped };
+    });
   }
 }
 </script>
