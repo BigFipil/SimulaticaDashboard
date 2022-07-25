@@ -5,13 +5,13 @@
         Form(label="Simulation settings")
           div
             b-field(label='Iteration count:')
-              b-input(v-model.number='localSettings.IterationCount' type='number' @input="update")
+              b-input(v-model.number='localSettings.IterationCount' expanded type='number' @input="update")
 
             b-field(label='Step time:')
-              b-input(v-model.number='localSettings.SimulationStepTime' type='number' @input="update")
+              b-input(v-model.number='localSettings.SimulationStepTime' expanded type='number' @input="update")
 
             b-field(label='Data savings step time:')
-              b-input(v-model.number='localSettings.DataSaveStepTime' type='number' @input="update")
+              b-input(v-model.number='localSettings.DataSaveStepTime' expanded type='number' @input="update")
 
             b-field(label='Memory mode:')
               b-switch(v-model='localSettings.FullRamMode' disabled='true' @input="update")
@@ -21,11 +21,11 @@
         Form(label="Output settings")
           div
             b-field(label='Simulation type:')
-              b-select(v-model='localSettings.SimulationType' expanded='' @input="update")
+              b-select(v-model='localSettings.SimulationType' expanded @input="update")
                 option(v-for='type in simulationTypes' :key='type' :value='type' v-text='type')
 
             .columns.no__margin
-              b-field.column.no__margin(label='X' expanded='')
+              b-field.column.no__margin(label='X' expanded)
                 b-input(v-model.number='localSettings.SimulationBoxSize.X' type='number' @input="update")
 
               b-field.column.no__margin(label='Y')
