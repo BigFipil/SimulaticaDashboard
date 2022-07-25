@@ -2,7 +2,7 @@
 
 Project created as a dashboard application for [Simulatica](https://github.com/BigFipil/Simulatica/). Main goal is to provide a better experience for creating simulation configurations files, by making more user-friendly interface.
 
-![Dashboard demo](https://github.com/BigFipil/SimulaticaDashboard/tree/master/src/assets/demo.gif)
+![Dashboard demo](https://github.com/BigFipil/SimulaticaDashboard/blob/master/src/assets/demo.gif)
 
 ## Project setup
 ```
