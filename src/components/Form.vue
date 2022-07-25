@@ -2,7 +2,7 @@
   .form
     .label
       b {{ label }}
-    .content
+    .content-box
       slot
 
 </template>
@@ -26,7 +26,7 @@ export default class Form extends Vue {
   font-size: 2rem;
   color: #f1f1f1;
 }
-.content {
+.content-box {
   padding-left: 1rem;
   margin-bottom: 3rem;
 }
