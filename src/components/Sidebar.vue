@@ -42,7 +42,7 @@
         </b-button>
       </b-field>
       <b-field>
-        <b-button :expanded="isExpanded" type="is-primary"  icon-left="information" @click="push(`about`)">
+        <b-button :expanded="isExpanded" type="is-primary"  icon-left="information" @click="push(``)">
           <div v-if="isExpanded" class="nav_button">
             About
           </div>
