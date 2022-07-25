@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 import Configuration from "../views/Configuration.vue";
 import Particles from "../views/Particles.vue";
 import Editor from "../views/Editor.vue";
+import Examples from "../views/Examples.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,11 @@ const routes: Array<RouteConfig> = [
     path: "/editor",
     name: "Editor",
     component: Editor,
+  },
+  {
+    path: "/examples",
+    name: "Examples",
+    component: Examples,
   },
 ];
 
